@@ -11,10 +11,9 @@ SMODS.Back {
   pos = { x = 0, y = 0 },
   config = { extra = { joker_slots = 1 } },
   loc_vars = function(self, info_queue, center)
-    return { vars = { self.config.extra.joker_slots } }
+    return { vars = {  } }
   end,
   apply = function(self, back)
-    G.GAME.starting_params.joker_slots = G.GAME.starting_params.joker_slots + self.config.extra.joker_slots
     G.E_MANAGER:add_event(Event({
       func = function()
         if G.jokers then

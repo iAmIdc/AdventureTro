@@ -13,7 +13,7 @@ SMODS.Joker {
     blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    cost = 2,
+    cost = 4,
     config = { extra = { mult = 7, alignment_lawchaos = "neutral", alignment_goodevil = "good" }, },
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = { set = "Other", key = "neutral_good" }
@@ -44,7 +44,7 @@ SMODS.Joker {
     blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    cost = 2,
+    cost = 4,
     config = { extra = { chips = 30, change = 10, alignment_lawchaos = "neutral", alignment_goodevil = "good" }, },
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = { set = "Other", key = "neutral_good" }
@@ -98,7 +98,7 @@ SMODS.Joker {
     blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    cost = 2,
+    cost = 4,
     config = { extra = { chips = 30, change = 10, alignment_lawchaos = "neutral", alignment_goodevil = "good" }, },
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = { set = "Other", key = "neutral_good" }

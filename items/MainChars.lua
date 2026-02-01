@@ -129,7 +129,7 @@ SMODS.Joker {
 	eternal_compat = true,
 	perishable_compat = true,
     cost = 4,
-    config = { extra = { Xmult_gain = 0.25, Xmult = 1, suit = "Hearts", alignment_lawchaos = "chaotic", alignment_goodevil = "good" }, },
+    config = { extra = { Xmult_gain = 0.05, Xmult = 1, suit = "Hearts", alignment_lawchaos = "chaotic", alignment_goodevil = "good" }, },
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = { set = "Other", key = "chaotic_good" }
 		return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult, card.ability.extra.suit } }

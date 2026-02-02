@@ -29,9 +29,9 @@ return {
 			j_attro_bubblegum               = {
                 name = 'Princess Bubblegum',
                 text = {
-                    "{C:mult}+#1#{} Mult",
-                    "{C:inactive} (This is a placeholder effect {}",
-					"{C:inactive} while I try to think of a real one.) {}"
+                    "If played hand is a",
+                    "single {C:attention}face{} card,", 
+					"give it a {C:pink}#1#{} seal",
                 }
             },
 			j_attro_lady               = {

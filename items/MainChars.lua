@@ -75,16 +75,16 @@ SMODS.Joker {
 	eternal_compat = true,
 	perishable_compat = true,
     cost = 2,
-    config = { extra = { mult = 4, alignment_lawchaos = "lawful", alignment_goodevil = "neutral" }, },
+    config = { extra = { seal = "Candy", alignment_lawchaos = "lawful", alignment_goodevil = "neutral" }, },
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = { set = "Other", key = "lawful_neutral" }
-        return { vars = { card.ability.extra.mult } }
+        return { vars = { card.ability.extra.seal } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                mult = card.ability.extra.mult
-            }
+        if context.joker_main and context.cardarea == G.jokers and context.scoring_hand and context.full_hand and #context.full_hand == 1 and context.scoring_hand[1]:is_face() then
+			context.scoring_hand[1]:set_seal("attro_" .. card.ability.extra.seal)
+			context.full_hand[1]:juice_up()
+			return true
         end
     end
 }

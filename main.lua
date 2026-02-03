@@ -27,6 +27,7 @@ G.C.ATTRO.MISC_COLOURS = {
   NEUTRAL_GOOD = HEX("78C48A"),
   CHAOTIC_GOOD = HEX("BE85CB"),
   LAWFUL_NEUTRAL = HEX("7ED9DA"),
+  CHAOTIC_NEUTRAL = HEX("386EB7"),
 }
 
 local ref = Game.main_menu
@@ -47,6 +48,12 @@ function Game:main_menu(change_context)
 	if v.config and v.config.extra and type(v.config.extra) == "table" and v.config.extra.alignment_lawchaos == "lawful" and v.config.extra.alignment_goodevil == "neutral" then
       v.set_badges = function(self, card, badges)
         badges[#badges + 1] = create_badge(localize('lawful_neutral_badge'), G.C.ATTRO.MISC_COLOURS.LAWFUL_NEUTRAL,
+          G.C.WHITE, 1)
+      end
+    end
+	if v.config and v.config.extra and type(v.config.extra) == "table" and v.config.extra.alignment_lawchaos == "chaotic" and v.config.extra.alignment_goodevil == "neutral" then
+      v.set_badges = function(self, card, badges)
+        badges[#badges + 1] = create_badge(localize('chaotic_neutral_badge'), G.C.ATTRO.MISC_COLOURS.CHAOTIC_NEUTRAL,
           G.C.WHITE, 1)
       end
     end

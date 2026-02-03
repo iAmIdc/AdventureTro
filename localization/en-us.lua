@@ -50,6 +50,13 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 }
             },
+			j_attro_iceking               = {
+                name = 'Ice King',
+                text = {
+                    "{C:attention}Glass{} cards give",
+                    "{C:mult}+#1#{} Mult",
+                }
+            },
         },
         Tag = {
         },
@@ -77,6 +84,14 @@ return {
                     "character who is",
                     "neutral in a lawful way.",
                 }
+            },
+			chaotic_neutral = {
+                name = 'Chaotic Neutral',
+                text = {
+                    "A Joker depicting a",
+                    "character who is",
+                    "neutral in a chaotic way.",
+                }
             }
         }
     },
@@ -85,6 +100,7 @@ return {
             neutral_good_badge = "Neutral Good",
 			chaotic_good_badge = "Chaotic Good",
 			lawful_neutral_badge = "Lawful Neutral",
+			chaotic_neutral_badge = "Chaotic Neutral",
         },
         labels = {
         },

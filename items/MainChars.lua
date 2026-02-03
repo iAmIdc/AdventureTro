@@ -50,7 +50,6 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.chips, card.ability.extra.change } }
 	end,
     calculate = function(self, card, context)
-		count = 0
 		if context.before and next(context.poker_hands['Flush']) then
 			card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.change
 			return {
@@ -104,7 +103,6 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.chips, card.ability.extra.change } }
 	end,
     calculate = function(self, card, context)
-		count = 0
 		if context.before and next(context.poker_hands['Straight']) then
 			card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.change
 			return {
@@ -148,5 +146,36 @@ SMODS.Joker {
                 xmult = card.ability.extra.Xmult
             }
         end
+    end
+}
+
+SMODS.Joker {
+    key = "iceking",
+    pos = { x = 1, y = 1 },
+    rarity = 1,
+	atlas = 'MainChars',
+    blueprint_compat = true,
+	eternal_compat = true,
+	perishable_compat = true,
+    cost = 4,
+    config = { extra = { mult = 8, alignment_lawchaos = "chaotic", alignment_goodevil = "neutral" }, },
+    loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue + 1] = { set = "Other", key = "chaotic_neutral" }
+		return { vars = { card.ability.extra.mult } }
+	end,
+    calculate = function(self, card, context)
+		count = 0
+		if context.cardarea == G.jokers and context.scoring_hand then
+			if context.joker_main then
+				for k, c in ipairs(context.scoring_hand) do
+					if c.ability.name == 'Glass Card' then
+						count = count + 1
+					end
+				end 
+				return {
+					mult = card.ability.extra.mult * count
+				}
+			end
+		end
     end
 }

@@ -15,7 +15,7 @@ is_alignment_lawchaos = function(card, target_alignment)
 end
 
 get_alignment_lawchaos = function(card)
-  if card.ability and card.ability.extra and card.ability.extra.alignment_lawchaos then
+  if card.ability and type(card.ability.extra) == "table" and card.ability.extra.alignment_lawchaos then
     return card.ability.extra.alignment_lawchaos
   end
   return nil
@@ -38,7 +38,7 @@ is_alignment_goodevil = function(card, target_alignment)
 end
 
 get_alignment_goodevil = function(card)
-  if card.ability and card.ability.extra and card.ability.extra.alignment_goodevil then
+  if card.ability and type(card.ability.extra) == "table" and card.ability.extra.alignment_goodevil then
     return card.ability.extra.alignment_goodevil
   end
   return nil
